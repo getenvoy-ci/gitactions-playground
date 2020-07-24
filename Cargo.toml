@@ -1,6 +1,6 @@
 [package]
 name = "test-yank"
-version = "0.0.3+1"
+version = "0.0.5"
 authors = ["Yaroslav Skopets <yaroslav@tetrate.io>"]
 edition = "2018"
 license =  "MIT"
