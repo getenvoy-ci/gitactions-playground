@@ -183,7 +183,7 @@ jobs:
         version="$(cargo metadata --format-version=1 --no-deps | jq -r '.packages[] | .version')"
         tag="${GITHUB_REF##*/}"
         if [[ "$version" != "$tag" ]]; then
-          echo "Package version according to Cargo.toml ($version) is different from the Git tag ($tag). Looks like a bug :("
+          echo "Package version according to Cargo.toml ($version) is different from the Git tag ($tag). Did you forget to bump the version in Cargo.toml ?"
           exit 1
         fi
 
