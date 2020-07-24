@@ -1,0 +1,11 @@
+[package]
+name = "test-yank"
+version = "0.0.3+1"
+authors = ["Yaroslav Skopets <yaroslav@tetrate.io>"]
+edition = "2018"
+license =  "MIT"
+description = "test of cargo yank"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
