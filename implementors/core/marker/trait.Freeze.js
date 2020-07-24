@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["test_yank"] = [{"text":"impl Freeze for <a class=\"struct\" href=\"test_yank/inner/struct.Anything.html\" title=\"struct test_yank::inner::Anything\">Anything</a>","synthetic":true,"types":["test_yank::inner::Anything"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

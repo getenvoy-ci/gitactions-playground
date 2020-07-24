@@ -1,1 +1,1 @@
-initSidebarItems({});
+initSidebarItems({"mod":[["inner","Inner module."]]});
