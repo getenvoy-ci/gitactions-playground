@@ -1,6 +1,6 @@
 //! My library v0.0.5.
 
-//pub mod inner;
+pub mod inner;
 
 #[cfg(test)]
 mod tests {
