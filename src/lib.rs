@@ -1,4 +1,4 @@
-//! My library v0.0.2
+//! My library v0.0.5.
 
 //pub mod inner;
 
