@@ -136,29 +136,10 @@ jobs:
     - name: "Build docs"
       run: cargo doc --workspace --no-deps
 
-  version:
-    name: "Check version"
-    if: ${{ startsWith(github.ref, 'refs/tags/') }}
-    runs-on: ubuntu-latest
-    steps:
-    - name: "Checkout"
-      uses: actions/checkout@v2
-
-    - name: "Install Rust"
-      run: |
-        rustup update stable
-        rustup default stable
-        rustc -vV
-
-    - name: "Check version"
-      run: |
-        echo "TBD"
-
   publish:
     name: "Publish"
     if: ${{ startsWith(github.ref, 'refs/tags/') }}
     needs:
-    - version
     - lint
     - build
     - test
@@ -173,6 +154,15 @@ jobs:
         rustup update stable
         rustup default stable
         rustc -vV
+
+    - name: "Check version"
+      run: |
+        let version="$(cargo metadata --format-version=1 --no-deps | jq -r '.packages[] | .version')"
+        let tag="${GITHUB_REF##*/}"
+        if [[ "$version" != "$tag" ]]; then
+          echo "Package version according to Cargo.toml ($version) is different from the Git tag ($tag). Looks like a bug :("
+          exit 1
+        fi
 
     - name: "Publish"
       env:
