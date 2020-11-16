@@ -9,3 +9,5 @@ read -ra ENVOY_DOCKER_OPTIONS <<< "${ENVOY_DOCKER_OPTIONS:-}"
 echo "ENVOY_DOCKER_OPTIONS=${ENVOY_DOCKER_OPTIONS}"
 
 docker info
+
+docker images
