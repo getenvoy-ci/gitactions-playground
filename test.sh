@@ -11,3 +11,5 @@ echo "ENVOY_DOCKER_OPTIONS=${ENVOY_DOCKER_OPTIONS}"
 docker info
 
 docker images
+
+cat /etc/docker/daemon.json
