@@ -20,6 +20,24 @@ jobs:
     - name: "Checkout"
       uses: actions/checkout@v2
 
+    - name: Use env
+      env:
+        MY_SECRET_ENV: ${{ secrets.MY_SECRET }}
+      run: echo "$MY_SECRET_ENV"
+
+    - name: Use secret
+      run: echo "${{ secrets.MY_SECRET }}"
+
+    - name: Use printenv
+      env:
+        MY_SECRET_ENV: ${{ secrets.MY_SECRET }}
+      run: printenv MY_SECRET_ENV
+
+    - name: Pipe printenv
+      env:
+        MY_SECRET_ENV: ${{ secrets.MY_SECRET }}
+      run: printenv MY_SECRET_ENV | echo "none"
+
     - name: Dump GitHub context
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
